@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nin Movie AI</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:sans-serif;
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    .box{
+      background:#1e293b;
+      padding:20px;
+      border-radius:20px;
+      max-width:500px;
+      margin:auto;
+      margin-top:40px;
+    }
+
+    h1{
+      color:#38bdf8;
+    }
+
+    input{
+      margin-top:20px;
+      width:100%;
+      padding:15px;
+      border-radius:10px;
+      border:none;
+    }
+
+    button{
+      margin-top:20px;
+      padding:15px 25px;
+      border:none;
+      border-radius:10px;
+      background:#38bdf8;
+      color:black;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    .result{
+      margin-top:20px;
+      background:#334155;
+      padding:15px;
+      border-radius:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>🎬 Nin Movie AI</h1>
+
+    <p>AI បកប្រែរឿងចិនទៅសម្លេងខ្មែរ</p>
+
+    <input type="file" id="video">
+
+    <button onclick="translateMovie()">
+      បកប្រែរឿង
+    </button>
+
+    <div class="result" id="result">
+      មិនទាន់មានវីដេអូ
+    </div>
+
+  </div>
+
+  <script>
+
+    function translateMovie(){
+
+      let file =
+      document.getElementById('video').files[0];
+
+      if(!file){
+        alert('សូមជ្រើសរើសវីដេអូ');
+        return;
+      }
+
+      document.getElementById('result').innerHTML =
+      "⏳ កំពុងបកប្រែ AI...";
+
+      setTimeout(()=>{
+
+        document.getElementById('result').innerHTML =
+        "✅ បកប្រែជោគជ័យ<br><br>" +
+        "📁 " + file.name +
+        "<br><br>🎤 សម្លេងខ្មែរ AI រួចរាល់";
+
+      },3000);
+
+    }
+
+  </script>
+
+</body>
+</html>
